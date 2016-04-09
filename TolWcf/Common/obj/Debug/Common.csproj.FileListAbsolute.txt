@@ -1,0 +1,8 @@
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\bin\Debug\Tol.Common.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\bin\Debug\Tol.Common.pdb
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\obj\Debug\Tol.Common.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Common\obj\Debug\Tol.Common.pdb
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

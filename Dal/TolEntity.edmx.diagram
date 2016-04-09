@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1fc29eb82dd4e4090d8861c2f82a4e2" Name="Diagram1">
+        <EntityTypeShape EntityType="TOLModel.AVATAR" Width="1.5" PointX="3" PointY="9.875" />
+        <EntityTypeShape EntityType="TOLModel.BUBBLE" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="TOLModel.ITEM" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TOLModel.LINK_ITEM_FILTER" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="TOLModel.PROFIL" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="TOLModel.TIME" Width="1.5" PointX="0.75" PointY="12.5" />
+        <AssociationConnector Association="TOLModel.FK_AVATAR_PROFIL" />
+        <AssociationConnector Association="TOLModel.FK_BUBBLE_PROFIL" />
+        <AssociationConnector Association="TOLModel.FK_BUBBLE_TIME" />
+        <AssociationConnector Association="TOLModel.FK_LINK_ITEM_FILTER_ITEM" />
+        <EntityTypeShape EntityType="TOLModel.STAT" Width="1.5" PointX="6" PointY="6.875" />
+        <AssociationConnector Association="TOLModel.FK_STAT_PROFIL" />
+        <EntityTypeShape EntityType="TOLModel.FILTER" Width="1.5" PointX="5.375" PointY="1" />
+        <AssociationConnector Association="TOLModel.FK_BUBBLE_FILTER" />
+        <AssociationConnector Association="TOLModel.FK_FILTER_FILTER" />
+        <AssociationConnector Association="TOLModel.FK_LINK_ITEM_FILTER_FILTER" />
+        <AssociationConnector Association="TOLModel.FK_STAT_FILTER" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

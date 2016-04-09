@@ -1,0 +1,16 @@
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\TolUnitTest.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\TolUnitTest.pdb
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\obj\Debug\TolUnitTest.csprojResolveAssemblyReference.cache
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\obj\Debug\TolUnitTest.dll
+C:\Users\maxime.lecomte\documents\visual studio 2015\Projects\TolWcf\TolUnitTest\obj\Debug\TolUnitTest.pdb

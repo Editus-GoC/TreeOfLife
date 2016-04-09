@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TOLModelStoreContainer" CdmEntityContainer="TOLEntities">
+    <EntitySetMapping Name="AVATAR">
+      <EntityTypeMapping TypeName="TOLModel.AVATAR">
+        <MappingFragment StoreEntitySet="AVATAR">
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="ID_PROFIL" ColumnName="ID_PROFIL" />
+          <ScalarProperty Name="ID_AVATAR" ColumnName="ID_AVATAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUBBLE">
+      <EntityTypeMapping TypeName="TOLModel.BUBBLE">
+        <MappingFragment StoreEntitySet="BUBBLE">
+          <ScalarProperty Name="ID_TIME" ColumnName="ID_TIME" />
+          <ScalarProperty Name="ID_FILTER" ColumnName="ID_FILTER" />
+          <ScalarProperty Name="ID_PROFIL" ColumnName="ID_PROFIL" />
+          <ScalarProperty Name="SIZE" ColumnName="SIZE" />
+          <ScalarProperty Name="ID_BUBBLE" ColumnName="ID_BUBBLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEM">
+      <EntityTypeMapping TypeName="TOLModel.ITEM">
+        <MappingFragment StoreEntitySet="ITEM">
+          <ScalarProperty Name="ID_TIERS_TEMP" ColumnName="ID_TIERS_TEMP" />
+          <ScalarProperty Name="ID_ARTICLE_TEMP" ColumnName="ID_ARTICLE_TEMP" />
+          <ScalarProperty Name="PICTURE_URL" ColumnName="PICTURE_URL" />
+          <ScalarProperty Name="BODY" ColumnName="BODY" />
+          <ScalarProperty Name="TITEL" ColumnName="TITEL" />
+          <ScalarProperty Name="ID_ITEM" ColumnName="ID_ITEM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LINK_ITEM_FILTER">
+      <EntityTypeMapping TypeName="TOLModel.LINK_ITEM_FILTER">
+        <MappingFragment StoreEntitySet="LINK_ITEM_FILTER">
+          <ScalarProperty Name="ID_FILTER" ColumnName="ID_FILTER" />
+          <ScalarProperty Name="ID_ITEM" ColumnName="ID_ITEM" />
+          <ScalarProperty Name="ID_LINK" ColumnName="ID_LINK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROFIL">
+      <EntityTypeMapping TypeName="TOLModel.PROFIL">
+        <MappingFragment StoreEntitySet="PROFIL">
+          <ScalarProperty Name="LIB_PROFIL" ColumnName="LIB_PROFIL" />
+          <ScalarProperty Name="ID_PROFIL" ColumnName="ID_PROFIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIME">
+      <EntityTypeMapping TypeName="TOLModel.TIME">
+        <MappingFragment StoreEntitySet="TIME">
+          <ScalarProperty Name="TIME1" ColumnName="TIME" />
+          <ScalarProperty Name="ID_TIME" ColumnName="ID_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAT">
+      <EntityTypeMapping TypeName="TOLModel.STAT">
+        <MappingFragment StoreEntitySet="STAT">
+          <ScalarProperty Name="ITERATION" ColumnName="ITERATION" />
+          <ScalarProperty Name="CHOOSED" ColumnName="CHOOSED" />
+          <ScalarProperty Name="ID_FILTER" ColumnName="ID_FILTER" />
+          <ScalarProperty Name="SESSION" ColumnName="SESSION" />
+          <ScalarProperty Name="ID_PROFIL" ColumnName="ID_PROFIL" />
+          <ScalarProperty Name="ID_STAT" ColumnName="ID_STAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILTER">
+      <EntityTypeMapping TypeName="TOLModel.FILTER">
+        <MappingFragment StoreEntitySet="FILTER">
+          <ScalarProperty Name="ACTIF" ColumnName="ACTIF" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="ID_PARENT_FILTER" ColumnName="ID_PARENT_FILTER" />
+          <ScalarProperty Name="ID_FILTER" ColumnName="ID_FILTER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

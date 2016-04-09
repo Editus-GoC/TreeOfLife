@@ -1,0 +1,15 @@
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Tol.Dal.dll.config
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Tol.Dal.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Tol.Dal.pdb
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\EntityFramework.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Tol.Common.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Tol.Common.pdb
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\EntityFramework.xml
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\obj\Debug\Dal.csprojResolveAssemblyReference.cache
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\obj\Debug\Tol.Dal.dll
+C:\Users\maxime.lecomte\Documents\Visual Studio 2015\Projects\TolWcf\Dal\obj\Debug\Tol.Dal.pdb

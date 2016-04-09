@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\maxime.lecomte\Desktop\deploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>04/08/2016 10:37:06</publishTime>
+    </File>
+    <File Include="bin/Accord.dll">
+      <publishTime>04/08/2016 21:26:18</publishTime>
+    </File>
+    <File Include="bin/Accord.dll.config">
+      <publishTime>04/08/2016 21:26:18</publishTime>
+    </File>
+    <File Include="bin/Accord.Math.dll">
+      <publishTime>04/08/2016 21:36:13</publishTime>
+    </File>
+    <File Include="bin/Accord.Neuro.dll">
+      <publishTime>04/08/2016 21:36:14</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>04/08/2016 10:37:06</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/08/2016 16:51:16</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/08/2016 16:51:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>04/08/2016 10:36:47</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>04/08/2016 10:36:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>04/08/2016 10:36:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>04/08/2016 10:36:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>04/08/2016 10:37:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>04/08/2016 10:36:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>04/08/2016 10:36:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>04/09/2016 00:23:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.pdb">
+      <publishTime>04/09/2016 00:23:11</publishTime>
+    </File>
+    <File Include="bin/Tol.Common.dll">
+      <publishTime>04/09/2016 14:48:33</publishTime>
+    </File>
+    <File Include="bin/Tol.Common.pdb">
+      <publishTime>04/09/2016 14:48:33</publishTime>
+    </File>
+    <File Include="bin/Tol.Dal.dll">
+      <publishTime>04/09/2016 15:50:00</publishTime>
+    </File>
+    <File Include="bin/Tol.Dal.pdb">
+      <publishTime>04/09/2016 15:50:00</publishTime>
+    </File>
+    <File Include="bin/Tol.IA.dll">
+      <publishTime>04/09/2016 16:46:29</publishTime>
+    </File>
+    <File Include="bin/Tol.IA.pdb">
+      <publishTime>04/09/2016 16:46:29</publishTime>
+    </File>
+    <File Include="bin/TolWcf.dll">
+      <publishTime>04/09/2016 19:36:27</publishTime>
+    </File>
+    <File Include="bin/TolWcf.pdb">
+      <publishTime>04/09/2016 19:36:27</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/09/2016 02:22:54</publishTime>
+    </File>
+    <File Include="scripts/ai.0.15.0-build58334.js">
+      <publishTime>04/08/2016 10:37:07</publishTime>
+    </File>
+    <File Include="scripts/ai.0.15.0-build58334.min.js">
+      <publishTime>04/08/2016 10:37:07</publishTime>
+    </File>
+    <File Include="TolService.svc">
+      <publishTime>04/08/2016 12:17:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/09/2016 14:49:24</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

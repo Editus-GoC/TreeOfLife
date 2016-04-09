@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TOLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AVATAR">
+    <Key>
+      <PropertyRef Name="ID_AVATAR" />
+    </Key>
+    <Property Name="ID_AVATAR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROFIL" Type="int" Nullable="false" />
+    <Property Name="GENDER" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BUBBLE">
+    <Key>
+      <PropertyRef Name="ID_BUBBLE" />
+    </Key>
+    <Property Name="ID_BUBBLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SIZE" Type="decimal" Precision="18" Scale="8" Nullable="false" />
+    <Property Name="ID_PROFIL" Type="int" Nullable="false" />
+    <Property Name="ID_FILTER" Type="int" Nullable="false" />
+    <Property Name="ID_TIME" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FILTER">
+    <Key>
+      <PropertyRef Name="ID_FILTER" />
+    </Key>
+    <Property Name="ID_FILTER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PARENT_FILTER" Type="int" />
+    <Property Name="VALUE" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="COLOR" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACTIF" Type="bit" />
+  </EntityType>
+  <EntityType Name="ITEM">
+    <Key>
+      <PropertyRef Name="ID_ITEM" />
+    </Key>
+    <Property Name="ID_ITEM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITEL" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="BODY" Type="varchar(max)" Nullable="false" />
+    <Property Name="PICTURE_URL" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ID_ARTICLE_TEMP" Type="int" />
+    <Property Name="ID_TIERS_TEMP" Type="int" />
+  </EntityType>
+  <EntityType Name="LINK_ITEM_FILTER">
+    <Key>
+      <PropertyRef Name="ID_LINK" />
+    </Key>
+    <Property Name="ID_LINK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_ITEM" Type="int" Nullable="false" />
+    <Property Name="ID_FILTER" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PROFIL">
+    <Key>
+      <PropertyRef Name="ID_PROFIL" />
+    </Key>
+    <Property Name="ID_PROFIL" Type="int" Nullable="false" />
+    <Property Name="LIB_PROFIL" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STAT">
+    <Key>
+      <PropertyRef Name="ID_STAT" />
+    </Key>
+    <Property Name="ID_STAT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_PROFIL" Type="int" Nullable="false" />
+    <Property Name="SESSION" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ID_FILTER" Type="int" Nullable="false" />
+    <Property Name="CHOOSED" Type="bit" Nullable="false" />
+    <Property Name="ITERATION" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TIME">
+    <Key>
+      <PropertyRef Name="ID_TIME" />
+    </Key>
+    <Property Name="ID_TIME" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TIME" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AVATAR_PROFIL">
+    <End Role="PROFIL" Type="Self.PROFIL" Multiplicity="1" />
+    <End Role="AVATAR" Type="Self.AVATAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFIL">
+        <PropertyRef Name="ID_PROFIL" />
+      </Principal>
+      <Dependent Role="AVATAR">
+        <PropertyRef Name="ID_PROFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BUBBLE_FILTER">
+    <End Role="FILTER" Type="Self.FILTER" Multiplicity="1" />
+    <End Role="BUBBLE" Type="Self.BUBBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="BUBBLE">
+        <PropertyRef Name="ID_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BUBBLE_PROFIL">
+    <End Role="PROFIL" Type="Self.PROFIL" Multiplicity="1" />
+    <End Role="BUBBLE" Type="Self.BUBBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFIL">
+        <PropertyRef Name="ID_PROFIL" />
+      </Principal>
+      <Dependent Role="BUBBLE">
+        <PropertyRef Name="ID_PROFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BUBBLE_TIME">
+    <End Role="TIME" Type="Self.TIME" Multiplicity="1" />
+    <End Role="BUBBLE" Type="Self.BUBBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIME">
+        <PropertyRef Name="ID_TIME" />
+      </Principal>
+      <Dependent Role="BUBBLE">
+        <PropertyRef Name="ID_TIME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FILTER_FILTER">
+    <End Role="FILTER" Type="Self.FILTER" Multiplicity="0..1" />
+    <End Role="FILTER1" Type="Self.FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="FILTER1">
+        <PropertyRef Name="ID_PARENT_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LINK_ITEM_FILTER_FILTER">
+    <End Role="FILTER" Type="Self.FILTER" Multiplicity="1" />
+    <End Role="LINK_ITEM_FILTER" Type="Self.LINK_ITEM_FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="LINK_ITEM_FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LINK_ITEM_FILTER_ITEM">
+    <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+    <End Role="LINK_ITEM_FILTER" Type="Self.LINK_ITEM_FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ITEM">
+        <PropertyRef Name="ID_ITEM" />
+      </Principal>
+      <Dependent Role="LINK_ITEM_FILTER">
+        <PropertyRef Name="ID_ITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAT_FILTER">
+    <End Role="FILTER" Type="Self.FILTER" Multiplicity="1" />
+    <End Role="STAT" Type="Self.STAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="STAT">
+        <PropertyRef Name="ID_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAT_PROFIL">
+    <End Role="PROFIL" Type="Self.PROFIL" Multiplicity="1" />
+    <End Role="STAT" Type="Self.STAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFIL">
+        <PropertyRef Name="ID_PROFIL" />
+      </Principal>
+      <Dependent Role="STAT">
+        <PropertyRef Name="ID_PROFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TOLModelStoreContainer">
+    <EntitySet Name="AVATAR" EntityType="Self.AVATAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BUBBLE" EntityType="Self.BUBBLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FILTER" EntityType="Self.FILTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LINK_ITEM_FILTER" EntityType="Self.LINK_ITEM_FILTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROFIL" EntityType="Self.PROFIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STAT" EntityType="Self.STAT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIME" EntityType="Self.TIME" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AVATAR_PROFIL" Association="Self.FK_AVATAR_PROFIL">
+      <End Role="PROFIL" EntitySet="PROFIL" />
+      <End Role="AVATAR" EntitySet="AVATAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BUBBLE_FILTER" Association="Self.FK_BUBBLE_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="BUBBLE" EntitySet="BUBBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BUBBLE_PROFIL" Association="Self.FK_BUBBLE_PROFIL">
+      <End Role="PROFIL" EntitySet="PROFIL" />
+      <End Role="BUBBLE" EntitySet="BUBBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BUBBLE_TIME" Association="Self.FK_BUBBLE_TIME">
+      <End Role="TIME" EntitySet="TIME" />
+      <End Role="BUBBLE" EntitySet="BUBBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FILTER_FILTER" Association="Self.FK_FILTER_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="FILTER1" EntitySet="FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LINK_ITEM_FILTER_FILTER" Association="Self.FK_LINK_ITEM_FILTER_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="LINK_ITEM_FILTER" EntitySet="LINK_ITEM_FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LINK_ITEM_FILTER_ITEM" Association="Self.FK_LINK_ITEM_FILTER_ITEM">
+      <End Role="ITEM" EntitySet="ITEM" />
+      <End Role="LINK_ITEM_FILTER" EntitySet="LINK_ITEM_FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAT_FILTER" Association="Self.FK_STAT_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="STAT" EntitySet="STAT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAT_PROFIL" Association="Self.FK_STAT_PROFIL">
+      <End Role="PROFIL" EntitySet="PROFIL" />
+      <End Role="STAT" EntitySet="STAT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TOLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TOLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AVATAR" EntityType="TOLModel.AVATAR" />
+    <EntitySet Name="BUBBLE" EntityType="TOLModel.BUBBLE" />
+    <EntitySet Name="ITEM" EntityType="TOLModel.ITEM" />
+    <EntitySet Name="LINK_ITEM_FILTER" EntityType="TOLModel.LINK_ITEM_FILTER" />
+    <EntitySet Name="PROFIL" EntityType="TOLModel.PROFIL" />
+    <EntitySet Name="TIME" EntityType="TOLModel.TIME" />
+    <AssociationSet Name="FK_AVATAR_PROFIL" Association="TOLModel.FK_AVATAR_PROFIL">
+      <End Role="PROFIL" EntitySet="PROFIL" />
+      <End Role="AVATAR" EntitySet="AVATAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BUBBLE_PROFIL" Association="TOLModel.FK_BUBBLE_PROFIL">
+      <End Role="PROFIL" EntitySet="PROFIL" />
+      <End Role="BUBBLE" EntitySet="BUBBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BUBBLE_TIME" Association="TOLModel.FK_BUBBLE_TIME">
+      <End Role="TIME" EntitySet="TIME" />
+      <End Role="BUBBLE" EntitySet="BUBBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LINK_ITEM_FILTER_ITEM" Association="TOLModel.FK_LINK_ITEM_FILTER_ITEM">
+      <End Role="ITEM" EntitySet="ITEM" />
+      <End Role="LINK_ITEM_FILTER" EntitySet="LINK_ITEM_FILTER" />
+    </AssociationSet>
+    <EntitySet Name="STAT" EntityType="TOLModel.STAT" />
+    <AssociationSet Name="FK_STAT_PROFIL" Association="TOLModel.FK_STAT_PROFIL">
+      <End Role="PROFIL" EntitySet="PROFIL" />
+      <End Role="STAT" EntitySet="STAT" />
+    </AssociationSet>
+    <EntitySet Name="FILTER" EntityType="TOLModel.FILTER" />
+    <AssociationSet Name="FK_BUBBLE_FILTER" Association="TOLModel.FK_BUBBLE_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="BUBBLE" EntitySet="BUBBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FILTER_FILTER" Association="TOLModel.FK_FILTER_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="FILTER1" EntitySet="FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LINK_ITEM_FILTER_FILTER" Association="TOLModel.FK_LINK_ITEM_FILTER_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="LINK_ITEM_FILTER" EntitySet="LINK_ITEM_FILTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_STAT_FILTER" Association="TOLModel.FK_STAT_FILTER">
+      <End Role="FILTER" EntitySet="FILTER" />
+      <End Role="STAT" EntitySet="STAT" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AVATAR">
+    <Key>
+      <PropertyRef Name="ID_AVATAR" />
+    </Key>
+    <Property Name="ID_AVATAR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROFIL" Type="Int32" Nullable="false" />
+    <Property Name="GENDER" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PROFIL" Relationship="TOLModel.FK_AVATAR_PROFIL" FromRole="AVATAR" ToRole="PROFIL" />
+  </EntityType>
+  <EntityType Name="BUBBLE">
+    <Key>
+      <PropertyRef Name="ID_BUBBLE" />
+    </Key>
+    <Property Name="ID_BUBBLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SIZE" Type="Decimal" Nullable="false" Precision="18" Scale="8" />
+    <Property Name="ID_PROFIL" Type="Int32" Nullable="false" />
+    <Property Name="ID_FILTER" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIME" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PROFIL" Relationship="TOLModel.FK_BUBBLE_PROFIL" FromRole="BUBBLE" ToRole="PROFIL" />
+    <NavigationProperty Name="TIME" Relationship="TOLModel.FK_BUBBLE_TIME" FromRole="BUBBLE" ToRole="TIME" />
+    <NavigationProperty Name="FILTER" Relationship="TOLModel.FK_BUBBLE_FILTER" FromRole="BUBBLE" ToRole="FILTER" />
+  </EntityType>
+  <EntityType Name="ITEM">
+    <Key>
+      <PropertyRef Name="ID_ITEM" />
+    </Key>
+    <Property Name="ID_ITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITEL" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BODY" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PICTURE_URL" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_ARTICLE_TEMP" Type="Int32" />
+    <Property Name="ID_TIERS_TEMP" Type="Int32" />
+    <NavigationProperty Name="LINK_ITEM_FILTER" Relationship="TOLModel.FK_LINK_ITEM_FILTER_ITEM" FromRole="ITEM" ToRole="LINK_ITEM_FILTER" />
+  </EntityType>
+  <EntityType Name="LINK_ITEM_FILTER">
+    <Key>
+      <PropertyRef Name="ID_LINK" />
+    </Key>
+    <Property Name="ID_LINK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ITEM" Type="Int32" Nullable="false" />
+    <Property Name="ID_FILTER" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ITEM" Relationship="TOLModel.FK_LINK_ITEM_FILTER_ITEM" FromRole="LINK_ITEM_FILTER" ToRole="ITEM" />
+    <NavigationProperty Name="FILTER" Relationship="TOLModel.FK_LINK_ITEM_FILTER_FILTER" FromRole="LINK_ITEM_FILTER" ToRole="FILTER" />
+  </EntityType>
+  <EntityType Name="PROFIL">
+    <Key>
+      <PropertyRef Name="ID_PROFIL" />
+    </Key>
+    <Property Name="ID_PROFIL" Type="Int32" Nullable="false" />
+    <Property Name="LIB_PROFIL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AVATAR" Relationship="TOLModel.FK_AVATAR_PROFIL" FromRole="PROFIL" ToRole="AVATAR" />
+    <NavigationProperty Name="BUBBLE" Relationship="TOLModel.FK_BUBBLE_PROFIL" FromRole="PROFIL" ToRole="BUBBLE" />
+    <NavigationProperty Name="STAT" Relationship="TOLModel.FK_STAT_PROFIL" FromRole="PROFIL" ToRole="STAT" />
+  </EntityType>
+  <EntityType Name="TIME">
+    <Key>
+      <PropertyRef Name="ID_TIME" />
+    </Key>
+    <Property Name="ID_TIME" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIME1" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="BUBBLE" Relationship="TOLModel.FK_BUBBLE_TIME" FromRole="TIME" ToRole="BUBBLE" />
+  </EntityType>
+  <Association Name="FK_AVATAR_PROFIL">
+    <End Type="TOLModel.PROFIL" Role="PROFIL" Multiplicity="1" />
+    <End Type="TOLModel.AVATAR" Role="AVATAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFIL">
+        <PropertyRef Name="ID_PROFIL" />
+      </Principal>
+      <Dependent Role="AVATAR">
+        <PropertyRef Name="ID_PROFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BUBBLE_PROFIL">
+    <End Type="TOLModel.PROFIL" Role="PROFIL" Multiplicity="1" />
+    <End Type="TOLModel.BUBBLE" Role="BUBBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFIL">
+        <PropertyRef Name="ID_PROFIL" />
+      </Principal>
+      <Dependent Role="BUBBLE">
+        <PropertyRef Name="ID_PROFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BUBBLE_TIME">
+    <End Type="TOLModel.TIME" Role="TIME" Multiplicity="1" />
+    <End Type="TOLModel.BUBBLE" Role="BUBBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIME">
+        <PropertyRef Name="ID_TIME" />
+      </Principal>
+      <Dependent Role="BUBBLE">
+        <PropertyRef Name="ID_TIME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LINK_ITEM_FILTER_ITEM">
+    <End Type="TOLModel.ITEM" Role="ITEM" Multiplicity="1" />
+    <End Type="TOLModel.LINK_ITEM_FILTER" Role="LINK_ITEM_FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ITEM">
+        <PropertyRef Name="ID_ITEM" />
+      </Principal>
+      <Dependent Role="LINK_ITEM_FILTER">
+        <PropertyRef Name="ID_ITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="STAT">
+    <Key>
+      <PropertyRef Name="ID_STAT" />
+    </Key>
+    <Property Name="ID_STAT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PROFIL" Type="Int32" Nullable="false" />
+    <Property Name="SESSION" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ID_FILTER" Type="Int32" Nullable="false" />
+    <Property Name="CHOOSED" Type="Boolean" Nullable="false" />
+    <Property Name="ITERATION" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PROFIL" Relationship="TOLModel.FK_STAT_PROFIL" FromRole="STAT" ToRole="PROFIL" />
+    <NavigationProperty Name="FILTER" Relationship="TOLModel.FK_STAT_FILTER" FromRole="STAT" ToRole="FILTER" />
+  </EntityType>
+  <Association Name="FK_STAT_PROFIL">
+    <End Type="TOLModel.PROFIL" Role="PROFIL" Multiplicity="1" />
+    <End Type="TOLModel.STAT" Role="STAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROFIL">
+        <PropertyRef Name="ID_PROFIL" />
+      </Principal>
+      <Dependent Role="STAT">
+        <PropertyRef Name="ID_PROFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FILTER">
+    <Key>
+      <PropertyRef Name="ID_FILTER" />
+    </Key>
+    <Property Name="ID_FILTER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PARENT_FILTER" Type="Int32" />
+    <Property Name="VALUE" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIF" Type="Boolean" />
+    <NavigationProperty Name="BUBBLE" Relationship="TOLModel.FK_BUBBLE_FILTER" FromRole="FILTER" ToRole="BUBBLE" />
+    <NavigationProperty Name="FILTER1" Relationship="TOLModel.FK_FILTER_FILTER" FromRole="FILTER" ToRole="FILTER1" />
+    <NavigationProperty Name="FILTER2" Relationship="TOLModel.FK_FILTER_FILTER" FromRole="FILTER1" ToRole="FILTER" />
+    <NavigationProperty Name="LINK_ITEM_FILTER" Relationship="TOLModel.FK_LINK_ITEM_FILTER_FILTER" FromRole="FILTER" ToRole="LINK_ITEM_FILTER" />
+    <NavigationProperty Name="STAT" Relationship="TOLModel.FK_STAT_FILTER" FromRole="FILTER" ToRole="STAT" />
+  </EntityType>
+  <Association Name="FK_BUBBLE_FILTER">
+    <End Type="TOLModel.FILTER" Role="FILTER" Multiplicity="1" />
+    <End Type="TOLModel.BUBBLE" Role="BUBBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="BUBBLE">
+        <PropertyRef Name="ID_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FILTER_FILTER">
+    <End Type="TOLModel.FILTER" Role="FILTER" Multiplicity="0..1" />
+    <End Type="TOLModel.FILTER" Role="FILTER1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="FILTER1">
+        <PropertyRef Name="ID_PARENT_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LINK_ITEM_FILTER_FILTER">
+    <End Type="TOLModel.FILTER" Role="FILTER" Multiplicity="1" />
+    <End Type="TOLModel.LINK_ITEM_FILTER" Role="LINK_ITEM_FILTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="LINK_ITEM_FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_STAT_FILTER">
+    <End Type="TOLModel.FILTER" Role="FILTER" Multiplicity="1" />
+    <End Type="TOLModel.STAT" Role="STAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILTER">
+        <PropertyRef Name="ID_FILTER" />
+      </Principal>
+      <Dependent Role="STAT">
+        <PropertyRef Name="ID_FILTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
